@@ -25,9 +25,10 @@ namespace GigHub.Controllers
             var homeViewModel = new GigsViewModel
             {
                 UpcomingGigs = upcomingGigs,
-                ShowActions = User.Identity.IsAuthenticated
+                ShowActions = User.Identity.IsAuthenticated,
+                Headers = "Upcoming Gigs"
             };
-            return View(homeViewModel);
+            return View("Gigs",homeViewModel);
         }
 
         public ActionResult About()
