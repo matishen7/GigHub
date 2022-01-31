@@ -116,3 +116,7 @@ span.field-validation-error {
     list-style: none;
     padding: 12px;
 }
+
+.btn-sm{
+    position:relative;
+}

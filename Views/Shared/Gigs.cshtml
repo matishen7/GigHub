@@ -20,7 +20,7 @@
                     @gig.Artist.Name
                     @if (Model.ShowActions)
                     {
-                        <button data-user-id="@gig.ArtistId" class="btn-link btn-sm js-toggle-follow">Follow</button>
+                        <button data-user-id="@gig.ArtistId" class="btn-link btn-sm js-toggle-follow float-end">Follow</button>
                     }
                 </span>
                 <span class="genre">
@@ -28,7 +28,7 @@
                 </span>
                 @if (Model.ShowActions)
                 {
-                    <button data-gig-id="@gig.Id" class="btn-sm js-toggle-attendance">Going ?</button>
+                    <button data-gig-id="@gig.Id" class="btn-sm js-toggle-attendance float-end">Going ?</button>
                 }
             </div>
         </li>
@@ -38,32 +38,32 @@
 @section scripts
 {
     <script>
-        $(document).ready(function () {
-            $(".js-toggle-attendance").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
-                    .done(function () {
-                        button
-                            .removeClass("btn-sm")
-                            .addClass("btn-info")
-                            .text("Going");
-                    })
-                    .fail(function () {
-                        alert("Something went wrong!");
-                    });
-            });
+    $(document).ready(function () {
+        $(".js-toggle-attendance").click(function (e) {
+            var button = $(e.target);
+            $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
+                .done(function () {
+                    button
+                        .removeClass("btn-sm")
+                        .addClass("btn-info")
+                        .text("Going");
+                })
+                .fail(function () {
+                    alert("Something went wrong!");
+                });
+        });
 
-            $(".js-toggle-follow").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/followings", { followeeId: button.attr("data-user-id") })
-                    .done(function () {
-                        button
-                            .text("Following");
-                    })
-                    .fail(function () {
-                        alert("Something went wrong!");
-                    });
-            });
-        })
+        $(".js-toggle-follow").click(function (e) {
+            var button = $(e.target);
+            $.post("/api/followings", { followeeId: button.attr("data-user-id") })
+                .done(function () {
+                    button
+                        .text("Following");
+                })
+                .fail(function () {
+                    alert("Something went wrong!");
+                });
+        });
+    })
     </script>
 }
