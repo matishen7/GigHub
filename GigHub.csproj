@@ -185,7 +185,7 @@
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\GigsViewModel.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Dto\AttendanceDto.cs" />
     <Compile Include="Dto\FollowingDto.cs" />
@@ -315,6 +315,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Gigs\Create.cshtml" />
+    <Content Include="Views\Gigs\Attending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
