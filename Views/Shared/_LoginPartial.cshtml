@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -12,6 +13,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="@Url.Action("Attending", "Gigs")">Gigs I'm Going</a></li>
+                    <li><a class="dropdown-item" href="@Url.Action("Mine", "Gigs")">My Upcoming Gigs</a></li>
                     <li><a class="dropdown-item" href="#">Artists I'm Following'</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
