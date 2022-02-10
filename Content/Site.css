@@ -120,3 +120,12 @@ span.field-validation-error {
 .btn-sm{
     position:relative;
 }
+
+.gigs > li .actions{
+    font-size: 13px;
+    display: none;
+}
+
+.gigs > li:hover .actions {
+    display: block;
+}

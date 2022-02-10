@@ -1,12 +1,13 @@
 ﻿@model GigHub.ViewModel.GigViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Gig Form";
 }
 
-<h2>Add a Gig</h2>
-@using (Html.BeginForm("Create", "Gigs"))
+<h2>@Model.Heading</h2>
+@using (Html.BeginForm(Model.Action, "Gigs"))
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id);
     <p class="alert alert-info">All fields are <strong>required</strong></p>
     <div class="form-group">
         @Html.LabelFor(m => m.Venue, new { @class = "form-label" })
